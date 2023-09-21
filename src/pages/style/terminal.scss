@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "digital-7";
+  src: url("../../fonts/Digital-7.woff")format("woff");
+  src: url("../../fonts/Digital-7.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TexGyreCursor";
+  src: url("../../fonts/texgyrecursor.woff2")format("woff2");
+  src: url("../../fonts/texgyrecursor.woff")format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TexGyreCursor";
+  src: url("../../fonts/texgyrecursorbold.woff2")format("woff2");
+  src: url("../../fonts/texgyrecursorbold.woff")format("woff");
+  font-weight: 700;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  margin: 10px;
+  background-color: black;
+  font-size: 22px;
+}
+
+#terminal {
+  color: #00ff00;
+  width: 100%;
+  font-family: "TexGyreCursor", sans-serif;
+}
+
+.input-wrapper{
+  position: relative;
+}
+
+.input-terminal{
+  font-family: "TexGyreCursor", sans-serif;
+  color: #00ff00;
+  font-size: 22px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #000000;
+  caret-color: transparent;
+  cursor: default;
+}
+
+.input-square {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  background: #00ff00;
+}
+.active{
+  display: none;
+}
+
+.el-clock{
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  font-family: "digital-7", sans-serif;
+  color: #00ff00;
+  font-size: 24px;
+}
+
+.project{
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  grid-column-gap: 20px;
+  grid-row-gap: 5px;
+  margin: 0 0 20px 0;
+}

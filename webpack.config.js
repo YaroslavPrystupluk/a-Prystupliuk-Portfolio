@@ -1,8 +1,8 @@
 const path = require( "path" );
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const multiPages = require("./multiPage.config");
 const htmlPlugins = require("./htmlPlugins.config");
-const htmlPartialsPlugin = require("./htmPartialsPlugin.config")
+const htmlPartialsPlugin = require("./htmPartialsPlugin.config");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
@@ -37,11 +37,11 @@ const plugins = () => {
 		
 			new FaviconsWebpackPlugin({
 					logo: "src/img/favicon.png",
-					mode: 'webapp',
-					devMode: 'webapp',
+					mode: "webapp",
+					devMode: "webapp",
 					prefix: "img/",
 					inject: htmlPlugins => {
-							return true
+							return true;
 							// return basename(htmlPlugins.options.filename) === "src/pages/terminal.html"
 					}
 			}),
@@ -97,22 +97,22 @@ module.exports = {
 						{
 								test: /\.(c|sa|sc)ss$/i,
 								use: [
-										devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-										'css-loader',
+										devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+										"css-loader",
 										{
-												loader: 'postcss-loader',
+												loader: "postcss-loader",
 												options: {
 														postcssOptions: {
-																plugins: [require('postcss-preset-env')],
+																plugins: [require("postcss-preset-env")],
 														},
 												},
 										},
-										'group-css-media-queries-loader',
+										"group-css-media-queries-loader",
 										{
-												loader: 'resolve-url-loader',
+												loader: "resolve-url-loader",
 										},
 										{
-												loader: 'sass-loader',
+												loader: "sass-loader",
 												options: {
 														sourceMap: true,
 												},

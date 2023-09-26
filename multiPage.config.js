@@ -1,6 +1,6 @@
 const path = require( "path" );
 
-const result = {};
+result = {};
 
 result.entry = {
 		index: path.resolve( __dirname, "src/scripts/index.js" ),

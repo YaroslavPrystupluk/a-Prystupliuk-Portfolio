@@ -1,3 +1,5 @@
-dist
-node_modules
+dist/
+node_modules/
 webpack.config.js
+htmlPlugins.config.js
+htmPartialsPlugin.config.js

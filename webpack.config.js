@@ -1,7 +1,11 @@
 const path = require( "path" );
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const multiPages = require("./multiPage.config");
+const htmlPlugins = require("./htmlPlugins.config");
+const htmlPartialsPlugin = require("./htmPartialsPlugin.config")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 
 const mode = process.env.NODE_ENV || "development";
@@ -28,22 +32,25 @@ const addEslintLoader = () => {
 
 const plugins = () => {
 		const base = [
-				new HTMLWebpackPlugin({
-						filename: "index.html",
-						template: path.resolve(__dirname, "src/index.html"),
-						chunks: ["index"]
-						
-				} ),
-				new HTMLWebpackPlugin({
-						filename: "pages/terminal.html",
-						template: path.resolve(__dirname, "src/pages/terminal.html"),
-						chunks: ["terminal"]
-				} ),
+			...htmlPlugins,
+			...htmlPartialsPlugin,
+		
+			new FaviconsWebpackPlugin({
+					logo: "src/img/favicon.png",
+					mode: 'webapp',
+					devMode: 'webapp',
+					prefix: "img/",
+					inject: htmlPlugins => {
+							return true
+							// return basename(htmlPlugins.options.filename) === "src/pages/terminal.html"
+					}
+			}),
+			
 				new MiniCssExtractPlugin({
 						filename: "style/[name].[contenthash].bundle.css",
 				})
 		];
-		// if(!devMode) base.push(new BundleAnalyzerPlugin());
+		if(!devMode) base.push(new BundleAnalyzerPlugin());
 		
 		return base;
 };
@@ -58,8 +65,7 @@ module.exports = {
 				hot: true,
 		},
 		entry: {
-				index: path.resolve(__dirname, "src/scripts/index.js"),
-				terminal: path.resolve(__dirname, "src/pages/scripts/terminal.js")
+				...multiPages.entry
 		},
 		output: {
 				filename: "scripts/[name].[contenthash].bundle.js",

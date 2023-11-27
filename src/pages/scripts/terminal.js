@@ -75,9 +75,8 @@ function moveCursor() {
 		const inputRect = input.getBoundingClientRect();
 		const cursorPosition = input.selectionStart;
 		const inputStyle = getComputedStyle( input );
-		const cursorWidth = parseFloat( inputStyle.fontSize ) / 2;
+		const cursorWidth = parseFloat( inputStyle.fontSize ) / 1.65;
 		square.style.left = `${ inputRect.left + cursorPosition * cursorWidth - 10 }px`;
-		
 }
 
 const scrollDown = () => {
@@ -363,5 +362,6 @@ const showError = ( command ) => {
 		
 };
 
-document.addEventListener( "input", moveCursor );
+
 inputTerminal.addEventListener( "keydown", handlerInput );
+document.addEventListener( "input", moveCursor );

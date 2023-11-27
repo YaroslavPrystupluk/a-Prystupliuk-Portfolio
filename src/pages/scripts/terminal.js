@@ -75,7 +75,7 @@ function moveCursor() {
 		const inputRect = input.getBoundingClientRect();
 		const cursorPosition = input.selectionStart;
 		const inputStyle = getComputedStyle( input );
-		const cursorWidth = parseFloat( inputStyle.fontSize ) / 1.65;
+		const cursorWidth = parseFloat( inputStyle.fontSize ) / 1.659;
 		square.style.left = `${ inputRect.left + cursorPosition * cursorWidth - 10 }px`;
 }
 

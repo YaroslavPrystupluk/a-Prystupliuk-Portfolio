@@ -4,6 +4,7 @@ import "../index";
 import "../style/style";
 
 new Typed( "#typewriter", {
+		strings: ["FrontEnd Developer", "Competitive Programmer", "Web Designer"],
 		typeSpeed: 150,
 		backSpeed: 50,
 		startDelay: 100,
@@ -22,15 +23,17 @@ document.querySelector( ".theme-mode" ).addEventListener( "click", () => {
 const addThemeDark = () => {
 		try {
 				if ( localStorage.getItem( "theme" ) === "dark" ) {
+						console.log(document.querySelector( ".fa-moon" ));
 						document.body.classList.add( "dark" );
 						document.querySelector( ".clock" ).classList.add( "dark" );
-						document.querySelector( ".minutes:before" ).classList.add( "dark" );
-						document.querySelector( ".toggleIcon" ).textContent = "sunny";
+						document.querySelector( ".fa-moon" ).style.display = "none";
+						document.querySelector( ".fa-sun" ).style.display = "block";
 				} else {
+						console.log(document.querySelector( ".fa-sun" ));
 						document.body.classList.remove( "dark" );
 						document.querySelector( ".clock" ).classList.remove( "dark" );
-						document.querySelector( ".minutes:before" ).classList.remove( "dark" );
-						document.querySelector( ".toggleIcon" ).textContent = "nightlight";
+						document.querySelector( ".fa-moon" ).style.display = "block";
+						document.querySelector( ".fa-sun" ).style.display = "none";
 				}
 		} catch ( error ) {
 				console.warn( error );

@@ -4,7 +4,7 @@
   "description": "My portfolio",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=development&&webpack server",
+    "start": "set NODE_ENV=development&&webpack serve",
     "build-dev": "set NODE_ENV=development&&webpack",
     "build-prod": "set NODE_ENV=production&&webpack",
     "clear": "rd /s /q dist",

@@ -11,3 +11,25 @@
   src: url("../fonts/texgyrecursorbold.woff")format("woff");
   font-weight: 700;
 }
+
+@font-face {
+  font-family: "digital-7";
+  src: url("../fonts/Digital-7.woff")format("woff");
+  src: url("../fonts/Digital-7.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TexGyreCursor";
+  src: url("../fonts/texgyrecursor.woff2")format("woff2");
+  src: url("../fonts/texgyrecursor.woff")format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TexGyreCursor";
+  src: url("../fonts/texgyrecursorbold.woff2")format("woff2");
+  src: url("../fonts/texgyrecursorbold.woff")format("woff");
+  font-weight: 700;
+}

@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Inconsolata', monospace;
+  @include theme-switcher($light-theme-background, $light-theme-text);
+  transition: background-color 0.3s, color 0.3s;
+
+  &.dark {
+    @include theme-switcher($dark-theme-background, $dark-theme-text);
+  }
+}
+
+
+
+
+

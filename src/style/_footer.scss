@@ -1,0 +1,206 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px
+}
+
+.clock {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../img/clock.png"), url("../img/js.png");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+  inset 0 -15px 15px #ffffff,
+  0 15px 15px rgba(134, 134, 134, 0.35),
+  inset 0 15px 15px #ffffff;
+  &.dark{
+    border:none;
+    background: url("../img/clock.png"), url("../img/js.png"),
+    radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9,25,33,1) 38%);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+    inset 0 -15px 15px #191919,
+    0 15px 15px rgba(134, 134, 134, 0.35),
+    inset 0 15px 15px #191919;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #000000;
+      z-index: 100;
+      &.dark{
+        background: #ffffff;
+      }
+    }
+  }
+}
+
+.hour {
+  position: absolute;
+  .hours {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 100px;
+      background: #ffc600;
+      border-radius: 6px 6px 0 0;
+      z-index: 10;
+    }
+  }
+}
+
+.minute {
+  position: absolute;
+  .minutes {
+    width: 190px;
+    height: 190px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 115px;
+      @include bg-switcher(#000000);
+      border-radius: 6px 6px 0 0;
+      z-index: 11;
+      .dark {
+        @include bg-switcher(#ffffff);
+      }
+    }
+  }
+}
+
+.dark {
+  .minutes {
+    &::before {
+      @include bg-switcher(#ffff);
+    }
+  }
+}
+
+.second {
+  position: absolute;
+  .seconds {
+    width: 230px;
+    height: 230px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 145px;
+      @include bg-switcher(#000000);
+      border-radius: 6px 6px 0 0;
+      z-index: 12;
+    }
+  }
+}
+.dark {
+   .seconds {
+       &::before {
+       @include bg-switcher(#ffff);
+    }
+  }
+}
+
+.calendar {
+  .squared-left,
+  .squared-right {
+    position: relative;
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    border: 1px solid $color-icon;
+    cursor: pointer;
+  }
+
+  .squared-left:hover,
+  .squared-right:hover {
+    background-color: $color-attributs;
+    border: none;
+  }
+
+  .squared-right::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 12px;
+    border: solid $color-attributs;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+  }
+
+  .squared-right:hover:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    border: solid $color-icon;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+  }
+
+  .squared-left::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 9px;
+    border: solid $color-attributs;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(135deg);
+    cursor: pointer;
+  }
+
+  .squared-left:hover::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    border: solid $color-icon;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(135deg);
+    cursor: pointer;
+  }
+
+  .month__name,
+  .year__this{
+    display: inline-block;
+  }
+
+  td{
+    text-align: center;
+  }
+  .active-day{
+    background-color:$color-attributs;
+    font-weight: bolder;
+    color: $color-icon;
+  }
+}
+

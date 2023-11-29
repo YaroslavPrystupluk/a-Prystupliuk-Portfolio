@@ -1,0 +1,39 @@
+$light-theme-background: #ffffff;
+$light-theme-text: #000000;
+
+$light-shadow:  0 -15px 15px rgba(255, 255, 255, 0.05),
+inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+0 15px 15px rgba(0, 0, 0, 0.3),
+inset 0 15px 15px rgba(0, 0, 0, 0.3);
+
+$dark-theme-background: #333333;
+$dark-theme-text: #ffffff;
+
+$color-icon: #fffff0;
+$color-typing: #00ff00;
+$color-attributs: #5547a4;
+
+
+
+
+//:root {
+//  --theme-color: #5547a4;
+//  --theme-text: #ffffff;
+//  --theme-symbol: #fffff0;
+//  --thema-typing: #00ff00;
+//  --theme-black: #000000;
+//  --light-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+//  inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+//  0 15px 15px rgba(0, 0, 0, 0.3),
+//  inset 0 15px 15px rgba(0, 0, 0, 0.3);
+//}
+//
+//
+//.dark {
+//  --theme-text: #000000;
+//  --theme-black: #ffffff;
+//  --dark-shadow: 0 -15px 15px rgba(0, 0, 0, 0.3),
+//  inset 0 -15px 15px rgba(0, 0, 0, 0.3),
+//  0 15px 15px rgba(255, 255, 255, 0.05),
+//  inset 0 15px 15px rgba(255, 255, 255, 0.05);
+//}

@@ -1,0 +1,14 @@
+.theme-mode {
+  width: 75px;
+  background: $color-attributs;
+  height: 50px;
+  position: fixed;
+  bottom: 50px;
+  z-index: 10000;
+  box-shadow: 0 0 21px $color-attributs;
+  border-radius: 0 50px 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

@@ -17,7 +17,6 @@
     background: url("../img/wave.svg");
     background-size: 1600px 100px;
    &#wave1{
-      //z-index: 1000;
       opacity: 1;
       bottom: 0;
       animation: animatedWave 10s linear infinite;
@@ -29,24 +28,6 @@
           animation: animatedWave-02 8s linear infinite;
         }
    }
-}
-
-@keyframes animatedWave {
-  0% {
-    background-position-x: 1600px;
-  }
-  100% {
-    background-position-x: 0;
-  }
-}
-
-@keyframes animatedWave-02 {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 1600px;
-  }
 }
 
 .clock {
@@ -68,20 +49,14 @@
     background: $color-icon;
     z-index: 100;
   }
-  box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
-   //inset 0 -15px 15px $color-attributs,
-  0 15px 15px rgba(134, 134, 134, 0.35);
-  //inset 0 15px 15px $color-attributs;
+  box-shadow: $light-shadow;
   &.dark{
     border:none;
     background: url("../img/clock.png"), url("../img/js.png"),
     radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9,25,33,1) 38%);
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
-    inset 0 -15px 15px #191919,
-    0 15px 15px rgba(134, 134, 134, 0.35),
-    inset 0 15px 15px #191919;
+    box-shadow: $dark-shadow;
     &::before {
       content: "";
       position: absolute;
@@ -255,3 +230,21 @@
   }
 }
 
+
+@keyframes animatedWave {
+  0% {
+    background-position-x: 1600px;
+  }
+  100% {
+    background-position-x: 0;
+  }
+}
+
+@keyframes animatedWave-02 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1600px;
+  }
+}

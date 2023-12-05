@@ -1,40 +1,45 @@
+//color
 $light-theme-background: #ffffff;
-$light-theme-text: #000000;
-
-$light-shadow:  0 -15px 15px rgba(255, 255, 255, 0.05),
-inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-0 15px 15px rgba(0, 0, 0, 0.3),
-inset 0 15px 15px rgba(0, 0, 0, 0.3);
+$light-theme-text: #212529;
 
 $dark-theme-background: #333333;
 $dark-theme-text: #ffffff;
 
-$color-icon: #fffff0;
+$color-icon: #ffffff;
+
 $color-typing: #00ff00;
+
 $color-attributs: #5648a3;
+
 $color-footer: #857bbd;
 
 
+$light-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+0 15px 15px rgba(134, 134, 134, 0.35);
+
+$dark-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
+inset 0 -15px 15px #191919,
+0 15px 15px rgba(134, 134, 134, 0.35),
+inset 0 15px 15px #191919;
+//========================================================================================================//
+
+// font size
+$xl-title: 70px;
+$sm-title: 35px;
+
+$xl-typewriter: 32px;
+$sm-typewriter: 18px;
+
+$xl-icon: 42px;
+$sm-icon: 28px;
+
+//===========================================================================================================//
+
+$breakpoints: (
+  sm : 481px,
+  md : 768px,
+  lg : 1024px,
+  xl : 1280px,
+);
 
 
-//:root {
-//  --theme-color: #5547a4;
-//  --theme-text: #ffffff;
-//  --theme-symbol: #fffff0;
-//  --thema-typing: #00ff00;
-//  --theme-black: #000000;
-//  --light-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
-//  inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-//  0 15px 15px rgba(0, 0, 0, 0.3),
-//  inset 0 15px 15px rgba(0, 0, 0, 0.3);
-//}
-//
-//
-//.dark {
-//  --theme-text: #000000;
-//  --theme-black: #ffffff;
-//  --dark-shadow: 0 -15px 15px rgba(0, 0, 0, 0.3),
-//  inset 0 -15px 15px rgba(0, 0, 0, 0.3),
-//  0 15px 15px rgba(255, 255, 255, 0.05),
-//  inset 0 15px 15px rgba(255, 255, 255, 0.05);
-//}

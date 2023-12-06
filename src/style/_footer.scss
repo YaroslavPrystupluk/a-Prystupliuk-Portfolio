@@ -1,33 +1,62 @@
 .footer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px
+  width: 100%;
+  height: 250px;
+  gap: 50px;
+  margin: 200px 0 0 0;
+  background: $color-footer;
+  .wave{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("../img/wave.svg");
+    background-size: 1600px 100px;
+   &#wave1{
+      opacity: 1;
+      bottom: 0;
+      animation: animatedWave 10s linear infinite;
+    }
+    &#wave2{
+          z-index: 999;
+          opacity: 1;
+          bottom: 0;
+          animation: animatedWave-02 8s linear infinite;
+        }
+   }
 }
 
 .clock {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: url("../img/clock.png"), url("../img/js.png");
   background-size: cover;
+  border: 1px solid $color-icon;
   border-radius: 50%;
-  box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
-  inset 0 -15px 15px #ffffff,
-  0 15px 15px rgba(134, 134, 134, 0.35),
-  inset 0 15px 15px #ffffff;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $color-icon;
+    z-index: 100;
+  }
+  box-shadow: $light-shadow;
   &.dark{
     border:none;
     background: url("../img/clock.png"), url("../img/js.png"),
     radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9,25,33,1) 38%);
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0 -15px 15px rgba(134, 134, 134, 0.35),
-    inset 0 -15px 15px #191919,
-    0 15px 15px rgba(134, 134, 134, 0.35),
-    inset 0 15px 15px #191919;
+    box-shadow: $dark-shadow;
     &::before {
       content: "";
       position: absolute;
@@ -36,9 +65,6 @@
       border-radius: 50%;
       background: #000000;
       z-index: 100;
-      &.dark{
-        background: #ffffff;
-      }
     }
   }
 }
@@ -46,8 +72,8 @@
 .hour {
   position: absolute;
   .hours {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -55,8 +81,8 @@
     &::before {
       content: "";
       position: absolute;
-      width: 8px;
-      height: 100px;
+      width: 5px;
+      height: 90px;
       background: #ffc600;
       border-radius: 6px 6px 0 0;
       z-index: 10;
@@ -67,8 +93,8 @@
 .minute {
   position: absolute;
   .minutes {
-    width: 190px;
-    height: 190px;
+    width: 150px;
+    height: 150px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -77,12 +103,12 @@
       content: "";
       position: absolute;
       width: 4px;
-      height: 115px;
+      height: 95px;
       @include bg-switcher(#000000);
       border-radius: 6px 6px 0 0;
       z-index: 11;
       .dark {
-        @include bg-switcher(#ffffff);
+        @include bg-switcher($color-icon);
       }
     }
   }
@@ -91,7 +117,7 @@
 .dark {
   .minutes {
     &::before {
-      @include bg-switcher(#ffff);
+      @include bg-switcher($color-icon);
     }
   }
 }
@@ -99,8 +125,8 @@
 .second {
   position: absolute;
   .seconds {
-    width: 230px;
-    height: 230px;
+    width: 180px;
+    height: 180px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -109,7 +135,7 @@
       content: "";
       position: absolute;
       width: 2px;
-      height: 145px;
+      height: 110px;
       @include bg-switcher(#000000);
       border-radius: 6px 6px 0 0;
       z-index: 12;
@@ -119,7 +145,7 @@
 .dark {
    .seconds {
        &::before {
-       @include bg-switcher(#ffff);
+       @include bg-switcher($color-icon);
     }
   }
 }
@@ -204,3 +230,21 @@
   }
 }
 
+
+@keyframes animatedWave {
+  0% {
+    background-position-x: 1600px;
+  }
+  100% {
+    background-position-x: 0;
+  }
+}
+
+@keyframes animatedWave-02 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1600px;
+  }
+}

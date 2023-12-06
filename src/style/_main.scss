@@ -12,3 +12,22 @@
   align-items: center;
   cursor: pointer;
 }
+
+.hight-title{
+  margin: 35px 0 30px 0;
+  @extend %title;
+}
+
+.text-content{
+  text-align: center;
+  p{
+    margin: 0;
+  }
+
+  @extend %text;
+  span{
+    display: block;
+    color: $color-attributs;
+    @extend %subtitle;
+  }
+}

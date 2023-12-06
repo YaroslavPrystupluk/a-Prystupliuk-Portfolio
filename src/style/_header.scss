@@ -1,5 +1,6 @@
 .header{
-background-image: url("../img/header-bg.jpg");
+  position: relative;
+  background-image: url("../img/header-bg.jpg");
   width: 100%;
   height: 100vh;
   .header-shadow{
@@ -11,8 +12,18 @@ background-image: url("../img/header-bg.jpg");
   .header-content{
     position: absolute;
     top: 36px;
-    right: 55px;
+    right: 0;
   }
+}
+
+.wrapper{
+
+  opacity: 0;
+  transform: translateX(25%);
+  animation: fadeInRight 1s ease forwards;
+@include breakpoint(sm){
+  margin: 0 100px 0 0 ;
+}
 }
 
 .icon{
@@ -20,38 +31,26 @@ background-image: url("../img/header-bg.jpg");
   font-size: clamp(12px, 6vw, 24px);
 }
 
-
 .terminal{
   position: absolute;
-  right: 12px;
- animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  right: 60px;
+  animation: blink 1s infinite;
 }
 
 .name{
   .name-develop {
     margin: 150px 0 25px 0;
     color: $dark-theme-text;
-    font-size: clamp(35px, 6vw, 70px) ;
+    font-size: clamp($sm-title, 6vw, $xl-title) ;
     font-weight: bolder;
-    text-align: end;
+    text-align: center;
   }
 }
 
 .typewriter {
-  text-align: right;
-  font-size: clamp(18px, 6vw, 32px);
+  //text-align: right;
+  text-align: center;
+  font-size: clamp($sm-typewriter, 6vw, $xl-typewriter);
   margin: 0 0 30px 0;
 }
 
@@ -70,16 +69,36 @@ background-image: url("../img/header-bg.jpg");
    color: $color-typing;
    animation: blink 1s infinite;
  }
+
 .resource{
   display: flex;
-  justify-content: flex-end;
+  //justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
 .resource .icon{
   padding: 5px;
-  font-size: clamp(28px, 6vw, 42px);
+  font-size: clamp($sm-icon, 6vw, $xl-icon);
   color: $light-theme-background;
   }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

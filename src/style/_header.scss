@@ -17,12 +17,9 @@
 }
 
 .wrapper{
-
-  opacity: 0;
-  transform: translateX(25%);
-  animation: fadeInRight 1s ease forwards;
-@include breakpoint(sm){
-  margin: 0 100px 0 0 ;
+  width: 100%;
+@include mq(sm){
+  margin: 0 50px 0 0 ;
 }
 }
 
@@ -93,12 +90,5 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }

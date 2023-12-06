@@ -1,7 +1,10 @@
 import Typed from "typed.js";
+import AOS from "aos";
 
 import "../index";
 import "../style/style";
+
+AOS.init();
 
 new Typed( "#typewriter", {
 		strings: ["FrontEnd Developer", "Competitive Programmer", "Web Designer"],
@@ -23,7 +26,6 @@ document.querySelector( ".theme-mode" ).addEventListener( "click", () => {
 const addThemeDark = () => {
 		try {
 				if ( localStorage.getItem( "theme" ) === "dark" ) {
-						console.log(document.querySelector( ".fa-moon" ));
 						document.body.classList.add( "dark" );
 						document.querySelector( ".clock" ).classList.add( "dark" );
 						document.querySelector( ".fa-moon" ).style.display = "none";
@@ -173,6 +175,4 @@ const getDay = ( date ) => {
 
 
 createCalendar( ".calendar", new Date().getFullYear(), new Date().getMonth() + 1 );
-// document.querySelector( ".container" ).addEventListener( "click", getPrevDate );
-
 

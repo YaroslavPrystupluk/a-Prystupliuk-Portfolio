@@ -331,7 +331,7 @@ const showContact = () => {
 };
 
 const showCV = () => {
-		window.open( "https://drive.google.com/file/d/14eIUBYnuZUenOCUqLh4BBoyqkp-7nVtR/view?usp=sharing" );
+		window.open( "https://drive.google.com/file/d/1z0jJ9b75SqAFjORloTA9PdFyFDxDQrhP/view?usp=sharing" );
 		
 };
 

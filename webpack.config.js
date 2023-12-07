@@ -76,8 +76,8 @@ module.exports = {
 		resolve: {
 				extensions: [".js", ".scss", ".html", ".ts", ".css"],
 				alias: {
-						// "@styles": path.resolve(__dirname, "src/style")
-				}
+						// "@aos": path.resolve(__dirname, 'node_modules/aos/dist/aos.css'),
+				},
 		},
 		optimization: {
 				minimizer: [

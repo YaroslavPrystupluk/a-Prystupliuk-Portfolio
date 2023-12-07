@@ -7,7 +7,7 @@
   background-color: $background-color;
 }
 
-@mixin breakpoint($width, $type: min) {
+@mixin mq($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
 

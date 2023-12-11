@@ -1,6 +1,9 @@
 .header{
   position: relative;
   background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
   width: 100%;
   height: 100vh;
   .header-shadow{

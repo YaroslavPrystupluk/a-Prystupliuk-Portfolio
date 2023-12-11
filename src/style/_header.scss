@@ -17,10 +17,11 @@
 }
 
 .wrapper{
-  width: 100%;
-@include mq(sm){
-  margin: 0 50px 0 0 ;
-}
+   max-width: 100%;
+  margin: 0 20px 0 0 ;
+  @include mq(sm){
+    margin: 0 100px 0 0 ;
+  }
 }
 
 .icon{
@@ -34,7 +35,6 @@
   animation: blink 1s infinite;
 }
 
-.name{
   .name-develop {
     margin: 150px 0 25px 0;
     color: $dark-theme-text;
@@ -42,13 +42,14 @@
     font-weight: bolder;
     text-align: center;
   }
-}
 
 .typewriter {
-  //text-align: right;
   text-align: center;
-  font-size: clamp($sm-typewriter, 6vw, $xl-typewriter);
+  font-size: clamp($sm-typewriter, 3vw, $xl-typewriter);
   margin: 0 0 30px 0;
+  @include mq(xs){
+    text-align: right;
+    }
 }
 
 .typewriter-text {
@@ -69,10 +70,13 @@
 
 .resource{
   display: flex;
-  //justify-content: flex-end;
+
   justify-content: center;
   align-items: center;
   gap: 20px;
+  @include mq(xs){
+    justify-content: flex-end;
+  }
 }
 
 .resource .icon{

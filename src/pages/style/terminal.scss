@@ -1,4 +1,6 @@
 @import "../../style/fonts";
+@import "../../style/root";
+@import "../../style/mixins";
 
 * {
   margin: 0;
@@ -15,6 +17,11 @@ body{
   color: #00ff00;
   width: 100%;
   font-family: "TexGyreCursor", sans-serif;
+  margin: 25px 0 0 0;
+  @include mq(lg) {
+    margin: 0;
+  }
+
 }
 
 .input-wrapper{
@@ -50,7 +57,7 @@ body{
   font-family: "digital-7", sans-serif;
   color: #00ff00;
   font-size: 24px;
-}
+  }
 
 .project{
   display: grid;

@@ -97,6 +97,9 @@
     justify-content: space-between;
     gap: 20px;
     margin: 0 0 0 20px;
+    &__strong{
+      font-weight: 800;
+    }
     @include mq(md) {
       display: flex;
       flex-direction: row;
@@ -114,10 +117,12 @@
       text-decoration: none;
       display: block;
       color: $light-theme-text;
+      font-weight: 500;
     }
 
     li > span {
       display: block;
+      font-weight: 500;
     }
   }
 
@@ -137,6 +142,9 @@
 
 .slogan {
   @extend %text;
+}
+.slogan.center{
+  text-align: center;
 }
 
 

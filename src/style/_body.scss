@@ -7,6 +7,7 @@
 body {
   margin: 0 auto;
   font-family: 'Inconsolata', monospace;
+  font-weight: 500;
   @include theme-switcher($light-theme-background, $light-theme-text);
   transition: background-color 0.3s, color 0.3s;
 

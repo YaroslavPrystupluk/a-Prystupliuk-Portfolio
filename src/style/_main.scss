@@ -130,6 +130,12 @@
   }
 }
 
+.dark{
+  li > a {
+    color: $dark-theme-text;
+  }
+}
+
 .slogan {
   @extend %text;
 }

@@ -14,69 +14,128 @@
 }
 
 .container {
-    margin: auto 10px;
+  margin: auto 10px;
 
-  @include mq(sm){
+  @include mq(sm) {
     max-width: 576px;
     margin: 0 auto;
   }
 
-  @include mq(md){
+  @include mq(md) {
     max-width: 768px;
   }
 
-  @include mq(lg){
+  @include mq(lg) {
     max-width: 992px;
   }
 
-  @include mq(xl){
+  @include mq(xl) {
     max-width: 1200px;
   }
 
-  @include mq(xxl){
+  @include mq(xxl) {
     max-width: 1400px;
   }
 }
 
-.high-title{
+.high-title {
   margin: 35px 0 30px 0;
   @extend %title;
 }
 
-.text-content{
-   text-align: center;
+.text-content {
+  text-align: center;
   @extend %text;
-  span{
+
+  span {
     display: block;
     color: $color-attributs;
     @extend %subtitle;
   }
 }
 
-//.image-content{
-//  background-image: url("../img/IMG-context.jpg") ;
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//  width: 100%;
-//  height: 100%;
-//}
+.about {
+  margin: 20px 0 0 0;
+    @include mq(lg) {
+    display: grid;
+    grid-template-columns: 33% 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
 
-.image-content{
-  max-width: 100%;
-}
-
-.subtitle {
-  p:first-child  {
-    color: $color-attributs;
-    @extend %subtitle;
   }
 
-  p:last-child{
+  &-img {
+    text-align: center;
+    .img{
+      max-width: 400px;
+      @include mq(lg) {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &-subtitle {
+    margin: 20px 0 0 0;
+
+    p:first-child {
+      color: $color-attributs;
+      @extend %subtitle;
+
+    }
+
+    p:nth-child(2) {
+      @extend %text;
+      margin: 10px 0 20px 0;
+    }
+
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 0 20px;
+    @include mq(md) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
     @extend %text;
+
+    li > a {
+      text-decoration: none;
+      display: block;
+      color: $light-theme-text;
+    }
+
+    li > span {
+      display: block;
+    }
+  }
+
+  &-slogan {
+    @extend %text;
+    grid-column: 2;
+    margin: 0 0 20px 0;
+
   }
 }
 
-.slogan{
+.slogan {
   @extend %text;
 }
+
+
+
+
+
 

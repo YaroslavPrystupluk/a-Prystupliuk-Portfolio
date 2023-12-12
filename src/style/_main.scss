@@ -89,7 +89,6 @@
       @extend %text;
       margin: 10px 0 20px 0;
     }
-
   }
 
   &-list {
@@ -127,6 +126,12 @@
     grid-column: 2;
     margin: 0 0 20px 0;
 
+  }
+}
+
+.dark{
+  li > a {
+    color: $dark-theme-text;
   }
 }
 

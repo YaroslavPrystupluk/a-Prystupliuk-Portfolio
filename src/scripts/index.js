@@ -31,7 +31,6 @@ const addThemeDark = () => {
 						document.querySelector( ".fa-moon" ).style.display = "none";
 						document.querySelector( ".fa-sun" ).style.display = "block";
 				} else {
-						console.log(document.querySelector( ".fa-sun" ));
 						document.body.classList.remove( "dark" );
 						document.querySelector( ".clock" ).classList.remove( "dark" );
 						document.querySelector( ".fa-moon" ).style.display = "block";

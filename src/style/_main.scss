@@ -32,10 +32,6 @@
   @include mq(xl) {
     max-width: 1200px;
   }
-
-  @include mq(xxl) {
-    max-width: 1400px;
-  }
 }
 
 .high-title {
@@ -146,9 +142,61 @@
 .slogan.center{
   text-align: center;
 }
+.skills{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, minmax(100px, 200px));
+  margin: 20px 0 0 0;
+  row-gap: 15px;
+  @include mq(sm) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  }
 
+  &-item{
+    border: 2px solid $light-theme-text;
+    box-shadow: -5px 0 15px $color-attributs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 5px;
+    background-color: #fff;
+    height: 80px;
+    transition: transform .5s ease;
 
+    @include mq(sm) {
+      height: 110px;
+    }
 
+    &:hover{
+      transform: scale(1.1);
+      box-shadow: 5px 0 50px $color-attributs;
+
+    }
+
+    &__image{
+     width: 65px;
+      @include mq(sm) {
+        width: 90px;
+      }
+    }
+  }
+}
+
+.gulp{
+  width: 30px;
+  @include mq(sm) {
+    width: 40px;
+  }
+}
+
+.webpack{
+  width: 100px;
+  @include mq(sm) {
+    width: 130px;
+  }
+
+}
 
 
 

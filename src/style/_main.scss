@@ -146,9 +146,27 @@
 .slogan.center{
   text-align: center;
 }
+.skills{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+  &-item{
+    border: 1px solid $light-theme-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 5px;
+    &__image{
+      width: 90px;
 
+    }
+  }
+}
 
-
+.gulp{
+  width: 40px;
+}
 
 
 

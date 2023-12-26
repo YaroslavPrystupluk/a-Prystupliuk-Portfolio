@@ -5,9 +5,12 @@
   justify-content: center;
   width: 100%;
   height: 250px;
-  gap: 50px;
+  gap: 10px;
   margin: 200px 0 0 0;
   background: $color-footer;
+  @include mq(sm) {
+    gap: 50px;
+  }
   .wave{
     position: absolute;
     top: -100px;
@@ -31,8 +34,8 @@
 }
 
 .clock {
-  width: 200px;
-  height: 200px;
+  width: 115px;
+  height: 115px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +43,10 @@
   background-size: cover;
   border: 1px solid $color-icon;
   border-radius: 50%;
+  @include mq(xsc) {
+    width: 200px;
+    height: 200px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -72,20 +79,28 @@
 .hour {
   position: absolute;
   .hours {
-    width: 140px;
-    height: 140px;
+    width: 80px;
+    height: 80px;
     position: relative;
     display: flex;
     justify-content: center;
     border-radius: 50%;
+    @include mq(xsc) {
+      width: 140px;
+      height: 140px;
+    }
     &::before {
       content: "";
       position: absolute;
-      width: 5px;
-      height: 90px;
+      width: 4px;
+      height: 55px;
       background: #ffc600;
       border-radius: 6px 6px 0 0;
       z-index: 10;
+      @include mq(xsc) {
+        width: 5px;
+        height: 90px;
+      }
     }
   }
 }
@@ -93,20 +108,28 @@
 .minute {
   position: absolute;
   .minutes {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: relative;
     display: flex;
     justify-content: center;
     border-radius: 50%;
+    @include mq(xsc) {
+      width: 150px;
+      height: 150px;
+    }
     &::before {
       content: "";
       position: absolute;
-      width: 4px;
-      height: 95px;
+      width: 3px;
+      height: 60px;
       @include bg-switcher(#000000);
       border-radius: 6px 6px 0 0;
       z-index: 11;
+      @include mq(xsc) {
+        width: 4px;
+        height: 95px;
+      }
       .dark {
         @include bg-switcher($color-icon);
       }
@@ -125,20 +148,28 @@
 .second {
   position: absolute;
   .seconds {
-    width: 180px;
-    height: 180px;
+    width: 105px;
+    height: 105px;
     position: relative;
     display: flex;
     justify-content: center;
     border-radius: 50%;
+    @include mq(xsc) {
+      width: 180px;
+      height: 180px;
+    }
     &::before {
       content: "";
       position: absolute;
       width: 2px;
-      height: 110px;
+      height: 65px;
       @include bg-switcher(#000000);
       border-radius: 6px 6px 0 0;
       z-index: 12;
+      @include mq(xsc) {
+        width: 2px;
+        height: 110px;
+      }
     }
   }
 }
@@ -155,10 +186,14 @@
   .squared-right {
     position: relative;
     display: inline-block;
-    width: 31px;
-    height: 31px;
+    width: 20px;
+    height: 20px;
     border: 1px solid $color-icon;
     cursor: pointer;
+    @include mq(xsc) {
+      width: 31px;
+      height: 31px;
+    }
   }
 
   .squared-left:hover,
@@ -170,58 +205,94 @@
   .squared-right::before {
     content: "";
     position: absolute;
-    top: 11px;
-    right: 12px;
+    top: 5px;
+    right: 6px;
     border: solid $color-attributs;
     border-width: 0 1px 1px 0;
     padding: 3px;
     transform: rotate(-45deg);
     cursor: pointer;
+    @include mq(xsc) {
+      top: 11px;
+      right: 12px;
+    }
   }
 
   .squared-right:hover:before {
     content: "";
     position: absolute;
-    top: 12px;
-    right: 13px;
+    top: 5px;
+    right: 6px;
     border: solid $color-icon;
     border-width: 0 1px 1px 0;
     padding: 3px;
     transform: rotate(-45deg);
     cursor: pointer;
+    @include mq(xsc) {
+      top: 12px;
+      right: 13px;
+    }
   }
 
   .squared-left::before {
     content: "";
     position: absolute;
-    top: 11px;
-    right: 9px;
+    top: 5px;
+    right: 4px;
     border: solid $color-attributs;
     border-width: 0 1px 1px 0;
     padding: 3px;
     transform: rotate(135deg);
     cursor: pointer;
+    @include mq(xsc) {
+      top: 11px;
+      right: 9px;
+    }
   }
 
   .squared-left:hover::before {
     content: "";
     position: absolute;
-    top: 12px;
-    right: 10px;
+    top: 6px;
+    right: 5px;
     border: solid $color-icon;
     border-width: 0 1px 1px 0;
     padding: 3px;
     transform: rotate(135deg);
     cursor: pointer;
+    @include mq(xsc) {
+      top: 12px;
+      right: 10px;
+    }
+  }
+
+  .month,
+  .year{
+    margin: 0 0 10px 0;
   }
 
   .month__name,
   .year__this{
     display: inline-block;
+    font-size: 14px;
+    @include mq(xsc) {
+      font-size: 16px;
+    }
+  }
+
+  th{
+    font-size: 14px;
+    @include mq(xsc) {
+      font-size: 16px;
+    }
   }
 
   td{
     text-align: center;
+    font-size: 14px;
+    @include mq(xsc) {
+      font-size: 16px;
+    }
   }
   .active-day{
     background-color:$color-attributs;

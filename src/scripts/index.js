@@ -1,5 +1,6 @@
 import Typed from "typed.js";
 import AOS from "aos";
+import RepoCard from "./RepoCard";
 
 import "../index";
 import "../style/style";
@@ -7,7 +8,7 @@ import "../style/style";
 AOS.init();
 
 new Typed( "#typewriter", {
-		strings: ["FrontEnd Developer", "Competitive Programmer", "Web Designer"],
+		strings: [ "FrontEnd Developer", "Competitive Programmer", "Web Designer" ],
 		typeSpeed: 150,
 		backSpeed: 50,
 		startDelay: 100,
@@ -88,7 +89,7 @@ const getCalendarDate = ( block, year, month ) => {
 		} );
 };
 
-const activeDate = (year, month) => {
+const activeDate = ( year, month ) => {
 		const days = document.querySelectorAll( "td" );
 		const date = new Date();
 		const nowYear = date.getFullYear();
@@ -164,7 +165,7 @@ const createCalendar = ( elem, year, month ) => {
 		getCalendarDate( ".year__arrow--left", year, month );
 		getCalendarDate( ".month__arrow--right", year, month );
 		getCalendarDate( ".month__arrow--left", year, month );
-		activeDate(year, month);
+		activeDate( year, month );
 };
 const getDay = ( date ) => {
 		let day = date.getDay();
@@ -172,6 +173,8 @@ const getDay = ( date ) => {
 		return day - 1;
 };
 
-
 createCalendar( ".calendar", new Date().getFullYear(), new Date().getMonth() + 1 );
 
+const repoCard = new RepoCard("YaroslavPrystupluk");
+
+repoCard.displayRepos();

@@ -160,7 +160,7 @@
     align-items: center;
     gap: 10px;
     padding: 10px 5px;
-    background-color: #fff;
+    background-color: $dark-theme-text;
     height: 80px;
     transition: transform .5s ease;
 
@@ -198,5 +198,47 @@
 
 }
 
+.repo{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 390px));
+  gap: 10px;
+  margin: 30px 0 0 0;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $dark-theme-text;
+  border-radius: 5px;
+  background-color: $light-theme-text;
+  color: $dark-theme-text;
+  font-size: 12px;
+}
+
+.card > div{
+  padding: 15px;
+}
+
+.card-title,
+.card-page{
+  text-decoration: none;
+  color: $color-repo-title;
+}
+
+.card-title{
+  font-size: 18px;
+}
+
+.icon-repo{
+  color: $color-repo-title;
+  font-size: 18px;
+}
+
+.icon-circle{
+  color: $color-repo-language;
+  font-size: 8px;
+}
 
 

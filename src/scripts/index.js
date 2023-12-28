@@ -113,7 +113,6 @@ const createCalendar = ( elem, year, month ) => {
 		const mon = month - 1;
 		const date = new Date( year, mon );
 		
-		
 		let table = `
 		<table>
 				<caption class="title-calendar">
@@ -167,6 +166,7 @@ const createCalendar = ( elem, year, month ) => {
 		getCalendarDate( ".month__arrow--left", year, month );
 		activeDate( year, month );
 };
+
 const getDay = ( date ) => {
 		let day = date.getDay();
 		if ( day === 0 ) day = 7;

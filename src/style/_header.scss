@@ -32,10 +32,22 @@
   font-size: clamp(12px, 6vw, 24px);
 }
 
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 100px 0 0;
+}
+
 .terminal{
-  position: absolute;
-  right: 60px;
-  animation: blink 1s infinite;
+  text-decoration: none;
+  animation: blink 1.5s infinite;
+}
+
+.menu-link__play{
+
+  color: $dark-theme-text;
+  font-size: 24px;
 }
 
   .name-develop {
